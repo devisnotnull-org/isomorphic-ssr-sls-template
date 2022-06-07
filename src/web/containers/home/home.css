@@ -5,6 +5,7 @@
 .Content {
     display: flex;  
     flex-direction: row;
+    text-align: center;
 }
 
 .Description {
@@ -17,15 +18,15 @@
     flex: 1;
 }
   
-
 @media (max-width: 850px) {
 
     .Content {  
         flex-direction: column;
+        text-align: center;
     }
 
     .Image {
-        width: 100%;
+        width: 33%;
     }
 
 }

@@ -29,16 +29,6 @@ export const HeaderView: FC<IHeaderProps> = () => {
         )}
       >
         <li className={classnames(styles['Link'], styles['Link--left'])}>
-          <Link to={'/'} onClick={() => setMenuOpen(false)}>
-            Profile
-          </Link>
-        </li>
-        <li className={classnames(styles['Link'], styles['Link--left'])}>
-          <Link to={'/blog'} onClick={() => setMenuOpen(false)}>
-            Blog
-          </Link>
-        </li>
-        <li className={classnames(styles['Link'], styles['Link--left'])}>
           <Link
             to={'https://github.com/devisnotnull/'}
             onClick={() => setMenuOpen(false)}
