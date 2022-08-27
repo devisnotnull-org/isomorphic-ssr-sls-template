@@ -5,12 +5,12 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import { config as server } from './serverless.common';
+import { config as serverless } from './serverless.common';
 import { build, src } from '../paths';
 
 const asset = require('../../build/asset-manifest.json');
 
-const config = merge(server('production'), {
+const config = merge(serverless('production'), {
   devtool: 'source-map',
   mode: 'production',
   optimization: {

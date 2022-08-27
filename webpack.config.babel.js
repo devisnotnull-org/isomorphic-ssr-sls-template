@@ -24,7 +24,7 @@ const configuration =
     ? [
         aquireTarget('style').config,
         aquireTarget('client').config,
-        aquireTarget('server').config,
+        aquireTarget('serverless').config,
       ]
     : [aquireTarget(target).config];
 

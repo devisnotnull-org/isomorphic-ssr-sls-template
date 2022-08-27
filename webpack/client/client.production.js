@@ -6,7 +6,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import CopyPlugin from 'copy-webpack-plugin'
 import { config as client } from './client.common';
-import { build, src, media, buildMedia } from '../paths'
+import { build, src } from '../paths'
 import AssetsPlugin from 'assets-webpack-plugin';
 
 const config = merge(client('production'), {
@@ -108,11 +108,6 @@ const config = merge(client('production'), {
     }),
     new MiniCssExtractPlugin({
       filename: 'static/client.[contenthash].css',
-    }),
-    new CopyPlugin({
-      patterns: [
-        { from: media, to: buildMedia },
-      ],
     }),
     new AssetsPlugin({
       path: build,

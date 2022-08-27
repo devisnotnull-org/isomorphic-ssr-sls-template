@@ -28,21 +28,16 @@ const renderApp = () => {
   );
 };
 
-//
 renderApp();
 
-
-// Server side rendering
 if ((module as any).hot) {
-  //
   (module as any).hot.accept('../web/app', () => {
-    // const newApp = require('../web/app').default;
     renderApp();
   });
-  //
   (module as any).hot.accept('../core/sagas', () => {
     (store as any).closeSagas();
     (store as any).rootTask = (store as any).runSaga(
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
       require('../core/sagas').default
     );
   });
