@@ -1,4 +1,4 @@
-/// <reference path="../../typings/index.d.ts" />
+import "../../typings/index.d.ts"
 
 import 'regenerator-runtime/runtime';
 import { install } from 'source-map-support';
