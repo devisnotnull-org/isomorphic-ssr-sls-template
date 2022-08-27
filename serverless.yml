@@ -6,11 +6,17 @@ plugins:
   - serverless-offline
   - serverless-deployment-bucket
   - serverless-prune-plugin
-  - serverless-s3-sync
 
 custom:
   ##
+  serverless-offline:
+    port: 3000 
+
+  ##
   localDevStaticFolder: build
+
+  ##
+  siteName: devnotnull.com
 
   ## Retention
   prune:
@@ -22,15 +28,6 @@ custom:
   deploymentBucket:
     versioning: true
     accelerate: true
-
-  ## S3 bucket for static assets
-  s3Sync:
-    - bucketName: devnotnull-ui-${self:custom.environment}
-      bucketPrefix: static/
-      localDir: build/static
-    - bucketName: devnotnull-ui-${self:custom.environment}
-      bucketPrefix: media/
-      localDir: media
 
   ##
   environment: ${opt:stage, 'development'}
@@ -79,4 +76,16 @@ resources:
                   - !Ref AssetsBucket
                   - /*
         Bucket: !Ref AssetsBucket
-    
+
+functions:
+  server:
+    handler: build/serverless.handler
+    environment:
+      NODE_RUNTIME_ENV: ${self:custom.environment}
+    events:
+      - http:
+          path: / # this matches any path, the token 'any' doesn't mean anything special
+          method: GET
+      - http:
+          path: /{any+} # this matches any path, the token 'any' doesn't mean anything special
+          method: GET

@@ -2,8 +2,9 @@ import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 
 import { Link } from '@components/link/link';
-import styles from './header.css';
 import { IHeaderProps } from './header.state';
+
+import styles from './header.css';
 
 export const HeaderView: FC<IHeaderProps> = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ export const HeaderView: FC<IHeaderProps> = () => {
       >
         <li className={classnames(styles['Link'], styles['Link--left'])}>
           <Link
-            to={'https://github.com/devisnotnull/'}
+            to={'https://github.com/devisnotnull'}
             onClick={() => setMenuOpen(false)}
           >
             Github
@@ -42,6 +43,22 @@ export const HeaderView: FC<IHeaderProps> = () => {
             onClick={() => setMenuOpen(false)}
           >
             Linkedin
+          </Link>
+        </li>
+        <li className={classnames(styles['Link'], styles['Link--left'])}>
+          <Link
+            to={'https://medium.com/@alexbrown201'}
+            onClick={() => setMenuOpen(false)}
+          >
+            Medium
+          </Link>
+        </li>
+        <li className={classnames(styles['Link'], styles['Link--left'])}>
+          <Link
+            to={'https://github.com/devisnotnull-org/isomorphic-ssr-sls-template'}
+            onClick={() => setMenuOpen(false)}
+          >
+            Source code
           </Link>
         </li>
       </ul>

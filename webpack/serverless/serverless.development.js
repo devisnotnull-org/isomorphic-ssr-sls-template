@@ -4,11 +4,11 @@ import { EnvironmentPlugin, DefinePlugin } from 'webpack';
 import { WaitPlugin } from '../plugins/wait'
 
 import { src, build } from '../paths'
-import { config as server } from './serverless.common';
+import { config as serverless } from './serverless.common';
 
 const asset = require('../../build/asset-manifest.json');
 
-const config = merge(server('development'), {
+const config = merge(serverless('development'), {
   mode: 'development',
   devtool: 'source-map',
   optimization: {

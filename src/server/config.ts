@@ -33,14 +33,14 @@ const defaultConfig: Config = {
   },
   development: {
     static: {
-      path: `https://devnotnull-ui-${bucket}.s3.amazonaws.com`
+      path: `https://devnotnull-sls-template-${bucket}.s3.amazonaws.com`
     }
   },
   developmentLocal: {},
   productionLocal: {},
   production: {
     static: {
-      path: `https://devnotnull-ui-production.s3.amazonaws.com`
+      path: `https://devnotnull-sls-template-production.s3.amazonaws.com`
     }
   }
 };
